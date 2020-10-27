@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8048209685292524670}
   - component: {fileID: 8048209685292524671}
+  - component: {fileID: 9079508903047271461}
   - component: {fileID: -549903839551491510}
+  - component: {fileID: 2919620502402821639}
   m_Layer: 0
   m_Name: Enemy 2
   m_TagString: Untagged
@@ -82,6 +84,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &9079508903047271461
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8048209685292524656}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.04, y: 0.84}
+    newSize: {x: 1.03, y: 0.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.26, y: -0.42}
+      - {x: 0.28, y: -0.41}
+      - {x: 0.52, y: 0.03}
+      - {x: 0.52, y: 0.17999999}
+      - {x: 0.29, y: 0.26}
+      - {x: 0.17999999, y: 0.35999998}
+      - {x: 0.049999997, y: 0.42}
+      - {x: -0.08, y: 0.42}
+      - {x: -0.37, y: 0.22}
+      - {x: -0.52, y: 0.17999999}
+      - {x: -0.52, y: 0.02}
+      - {x: -0.26999998, y: -0.41}
+      - {x: -0.26, y: -0.42}
+      - {x: -0.03, y: -0.42}
+      - {x: 0.03, y: -0.35}
+      - {x: 0.049999997, y: -0.42}
 --- !u!114 &-549903839551491510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,5 +137,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f46036796ea7b6945aacd1c73adf8313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveConfig: {fileID: 11400000, guid: 9913fc9d7c3f0c94c8a8518868efa3e1, type: 2}
-  speed: 5
+--- !u!114 &2919620502402821639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8048209685292524656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a885075ac91b7874fb2389ebbefc6695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserPrefab: {fileID: 4032292408856616791, guid: 5068d8c46d4a9e348ba40bec5b4c126e,
+    type: 3}
+  health: 100
+  shotCounter: 0
+  minTimeBetweenShots: 0.3
+  maxTimeBetweenShots: 3

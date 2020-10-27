@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6772422098487477586}
   - component: {fileID: 5913342694121363819}
   - component: {fileID: -7441338795324513776}
-  - component: {fileID: -891483719116338808}
   - component: {fileID: -3656517155807479181}
+  - component: {fileID: -891483719116338808}
+  - component: {fileID: 4777451188490469622}
   m_Layer: 0
   m_Name: Player laser
   m_TagString: Untagged
@@ -105,6 +106,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 1
+--- !u!70 &-3656517155807479181
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4032292408856616791}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.13, y: 0.37}
+  m_Direction: 0
 --- !u!114 &-891483719116338808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,19 +135,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserSpeed: 10
---- !u!70 &-3656517155807479181
-CapsuleCollider2D:
+--- !u!114 &4777451188490469622
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4032292408856616791}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.13, y: 0.37}
-  m_Direction: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2925783182932843bf6bbe6891fe930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
