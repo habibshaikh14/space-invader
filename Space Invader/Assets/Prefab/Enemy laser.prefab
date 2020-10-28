@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1746064773459883005}
   - component: {fileID: -891483719116338808}
   - component: {fileID: 4777451188490469622}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c2a905e7cbfa8f4488fff18f1fb4fbfb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 273f0ec50a7a15145a0b0c04278f989a, type: 3}
+  m_Color: {r: 1, g: 0.6609493, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -136,6 +136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserSpeed: 10
   isEnemyLaser: 1
+  laserClip: {fileID: 8300000, guid: 87ed2790bab168a479e17964e9efca31, type: 3}
+  laserClipVolume: 0.5
 --- !u!114 &4777451188490469622
 MonoBehaviour:
   m_ObjectHideFlags: 0

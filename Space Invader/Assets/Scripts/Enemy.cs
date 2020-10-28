@@ -5,16 +5,22 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     // Configuration variables
+    [Header("Projectile")]
     [SerializeField] GameObject laserPrefab;
-    [SerializeField] float health = 100f;
-    [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.3f;
     [SerializeField] float maxTimeBetweenShots = 3f;
+    float shotCounter;
+    [Header("Player")]
+    [SerializeField] float health = 100f;
+    [SerializeField] int killPoints = 100;
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] AudioClip deathClip;
+    [SerializeField] float deathClipVolume = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(MakeEnemyFire());
-        // shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
     }
 
     private IEnumerator MakeEnemyFire()
@@ -25,7 +31,6 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(shotCounter);
             Fire();
         }
-        
     }
 
     private void Fire()
@@ -33,16 +38,13 @@ public class Enemy : MonoBehaviour
         Instantiate(laserPrefab, transform.position, Quaternion.identity);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
-        ProcessHit(damageDealer);
+        if (damageDealer)
+        {
+            ProcessHit(damageDealer);
+        }
     }
 
     private void ProcessHit(DamageDealer damageDealer)
@@ -50,8 +52,16 @@ public class Enemy : MonoBehaviour
         health -= damageDealer.GetDamage();
         if (health <= 0f)
         {
-            Destroy(gameObject);
+            Die();
         }
         damageDealer.Hit();
+    }
+
+    private void Die()
+    {
+        GameObject destroyedVFX = Instantiate(deathVFX, gameObject.transform.position, Quaternion.identity) as GameObject;
+        FindObjectOfType<GameSession>().IncrementCurrentScore(killPoints);
+        Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(deathClip, Camera.main.transform.position, deathClipVolume);
     }
 }
